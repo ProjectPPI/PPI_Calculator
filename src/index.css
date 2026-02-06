@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Historical Color Palette */
+    --background: 220 14% 7%;
+    --foreground: 40 20% 95%;
+    --card: 220 14% 10%;
+    --card-foreground: 40 20% 95%;
+    --popover: 220 14% 10%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 40 45% 60%;
+    --primary-foreground: 220 14% 7%;
+    --secondary: 220 10% 15%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 40 10% 70%;
+    --accent: 40 45% 60%;
+    --accent-foreground: 220 14% 7%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 20% 95% / 0.14;
+    --input: 220 10% 20%;
+    --ring: 40 45% 60%;
+    --radius: 0.625rem;
+    
+    /* Custom Historical Colors */
+    --charcoal: #0E0F12;
+    --parchment: #F4F1EA;
+    --gold: #C9A86A;
+    --gold-light: #D4B87A;
+    --burgundy: #722F37;
+    --navy: #1A2744;
+    --cream: #F4F1EA;
+    --text-primary: #F4F1EA;
+    --text-secondary: #B8B2A6;
+    --text-dark: #1A1B1F;
+    --text-dark-secondary: #5A5C63;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  body {
+    @apply bg-[var(--charcoal)] text-[var(--text-primary)] antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+  }
+  
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  
+  .font-display {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Grain Overlay */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  
+  /* Section Base */
+  .section-pinned {
+    @apply w-screen h-screen relative overflow-hidden;
+  }
+  
+  /* Dark Overlay */
+  .dark-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(180deg, rgba(14,15,18,0.45), rgba(14,15,18,0.75));
+  }
+  
+  /* Card Styles */
+  .glass-card {
+    @apply rounded-[10px] border;
+    background: rgba(14, 15, 18, 0.72);
+    border-color: rgba(244, 241, 234, 0.14);
+    backdrop-filter: blur(8px);
+  }
+  
+  .glass-card-light {
+    @apply rounded-[10px] border;
+    background: rgba(244, 241, 234, 0.95);
+    border-color: rgba(26, 27, 31, 0.18);
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-[0.08em] transition-all duration-200;
+    background: var(--gold);
+    color: var(--charcoal);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    background: var(--gold-light);
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-[0.08em] border transition-all duration-200;
+    border-color: var(--gold);
+    color: var(--gold);
+    background: transparent;
+  }
+  
+  .btn-outline:hover {
+    transform: translateY(-2px);
+    background: rgba(201, 168, 106, 0.1);
+  }
+  
+  .btn-outline-light {
+    @apply px-6 py-3 rounded-lg font-mono text-sm uppercase tracking-[0.08em] border transition-all duration-200;
+    border-color: rgba(244, 241, 234, 0.3);
+    color: var(--cream);
+    background: transparent;
+  }
+  
+  .btn-outline-light:hover {
+    transform: translateY(-2px);
+    border-color: var(--cream);
+  }
+  
+  /* Slider Styles */
+  .custom-slider {
+    @apply w-full h-2 rounded-full appearance-none cursor-pointer;
+    background: rgba(244, 241, 234, 0.2);
+  }
+  
+  .custom-slider::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 rounded-full cursor-pointer transition-transform;
+    background: var(--cream);
+    border: 2px solid var(--gold);
+  }
+  
+  .custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  
+  .custom-slider::-moz-range-thumb {
+    @apply w-5 h-5 rounded-full cursor-pointer border-2;
+    background: var(--cream);
+    border-color: var(--gold);
+  }
+  
+  /* Mini Bar */
+  .mini-bar {
+    @apply h-1.5 rounded-full;
+    background: var(--gold);
+  }
+  
+  /* Text Shadow */
+  .text-shadow {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  }
+  
+  /* Parchment Background */
+  .bg-parchment {
+    background: var(--parchment);
+  }
+  
+  /* Gold Accent */
+  .text-gold {
+    color: var(--gold);
+  }
+  
+  .bg-gold {
+    background: var(--gold);
+  }
+  
+  .border-gold {
+    border-color: var(--gold);
+  }
+}
+
+@layer utilities {
+  /* Typography Sizes */
+  .text-h1 {
+    font-size: clamp(44px, 5.2vw, 84px);
+    line-height: 0.95;
+  }
+  
+  .text-h2 {
+    font-size: clamp(34px, 3.6vw, 56px);
+    line-height: 1.05;
+  }
+  
+  .text-h3 {
+    font-size: clamp(24px, 2.4vw, 36px);
+    line-height: 1.1;
+  }
+  
+  .text-body {
+    font-size: clamp(14px, 1.1vw, 18px);
+    line-height: 1.6;
+  }
+  
+  .text-micro {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+}
