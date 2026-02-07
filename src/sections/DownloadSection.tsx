@@ -72,7 +72,7 @@ export default function DownloadSection() {
     // Create a temporary link to trigger download
     const link = document.createElement('a');
     link.href = exeFilePath;
-    link.download = 'PPI-Calculator.exe';
+    link.download = './PPI-Calculator.exe';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -83,7 +83,7 @@ export default function DownloadSection() {
 
   const handlePdfDownload = (filename: string) => {
     const link = document.createElement('a');
-    link.href = `/${filename}`;
+    link.href = `./${filename}`;
     link.download = filename;
     document.body.appendChild(link);
     link.click();

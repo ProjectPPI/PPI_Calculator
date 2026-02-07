@@ -89,7 +89,7 @@ export default function DocumentationSection() {
         className="absolute inset-0 w-full h-full"
       >
         <img 
-          src="/architecture_doorway.jpg" 
+          src="/PPI_Calculator/architecture_doorway.jpg" 
           alt="Archive Doorway" 
           className="w-full h-full object-cover"
         />

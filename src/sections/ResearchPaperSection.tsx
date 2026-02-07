@@ -89,7 +89,7 @@ export default function ResearchPaperSection() {
         className="absolute inset-0 w-full h-full"
       >
         <img 
-          src="/research_paper_bg.jpg" 
+          src="/PPI_Calculator/research_paper_bg.jpg" 
           alt="Research Materials" 
           className="w-full h-full object-cover"
         />

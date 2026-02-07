@@ -84,7 +84,7 @@ export default function DomainsSection() {
         className="absolute inset-0 w-full h-full"
       >
         <img 
-          src="/city_fortress.jpg" 
+          src="/PPI_Calculator/city_fortress.jpg" 
           alt="Historic Fortress" 
           className="w-full h-full object-cover"
         />

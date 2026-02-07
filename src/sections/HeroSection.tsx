@@ -121,7 +121,7 @@ export default function HeroSection() {
         style={{ opacity: 0 }}
       >
         <img 
-          src="/hero_map.jpg" 
+          src="/PPI_Calculator/hero_map.jpg"
           alt="Historical Map" 
           className="w-full h-full object-cover"
         />

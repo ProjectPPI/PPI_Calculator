@@ -65,7 +65,7 @@ export default function WhatIsPPISection() {
         className="absolute inset-0 w-full h-full"
       >
         <img 
-          src="/interior_architecture.jpg" 
+          src="/PPI_Calculator/interior_architecture.jpg" 
           alt="Classical Interior" 
           className="w-full h-full object-cover"
         />

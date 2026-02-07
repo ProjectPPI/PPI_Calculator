@@ -153,7 +153,7 @@ export default function CalculatorSection() {
         className="absolute inset-0 w-full h-full"
       >
         <img 
-          src="/architecture_facade.jpg" 
+          src="/PPI_Calculator/architecture_facade.jpg" 
           alt="Classical Architecture" 
           className="w-full h-full object-cover"
         />
