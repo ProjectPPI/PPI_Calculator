@@ -5,8 +5,11 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/PPI_Calculator/',  // ← CHANGED THIS LINE
   plugins: [inspectAttr(), react()],
+  build: {
+    outDir: 'docs',  // ← ADD THIS if you haven't already
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

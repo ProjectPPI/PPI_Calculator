@@ -1,3 +1,32 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+dist/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
@@ -8,30 +37,3 @@ lerna-debug.log*
 # OS files
 .DS_Store
 Thumbs.db
-*.swp
-*.swo
-
-
-# OPTION A: If using GitHub Actions (auto-build) - UNCOMMENT these:
-# dist/
-# dist-ssr/
-
-# OPTION B: If deploying the dist/ folder directly - KEEP these commented
-# (keep dist/ in your repo so GitHub Pages can serve it)
-
-
-# Editor files (optional, but recommended)
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-
-# Testing
-/coverage
-
-# Temporary files
-*.tmp
-*.temp
